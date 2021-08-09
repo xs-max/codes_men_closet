@@ -5,6 +5,7 @@ const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const cors = require('cors');
+const errorHandler = require('./controllers/errorController');
 
 /*  files imports     */
 
@@ -21,5 +22,7 @@ app.use(compression());
 
 //Routes
 
+
+app.use(errorHandler);
 
 module.exports = app;
